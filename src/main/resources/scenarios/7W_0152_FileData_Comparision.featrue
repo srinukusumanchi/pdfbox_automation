@@ -1,0 +1,11 @@
+@0152FileDataComparision
+Feature: DQ File 0152-Beneficiary Data - Not a Nominee Broker and not a Professional Trustee Account File compared against 7K and MDM DB
+
+  @0152BBFileDataComparision
+  Scenario Outline: To Verify the BB accounts data against 7K and MDM Database
+    Given validate "<table>" and "<accountType>" accounts against SevenK and MDM Database
+    Examples:
+      | table | accountType |
+#      | 0152  | BB-003      |
+#      | 0152  | BB-004      |
+      | 0152  | UF-005      |

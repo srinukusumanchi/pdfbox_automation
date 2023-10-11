@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <!-- Console -->
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="INFO"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%t: %.250m %n"/>
+        </layout>
+    </appender>
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="INFO"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+    <!-- Report Portal -->
+    <appender name="ReportPortalAppender" class="com.epam.ta.reportportal.log4j.appender.ReportPortalAppender">
+        <param name="Threshold" value="INFO"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p (%F:%L) - %m%n"/>
+        </layout>
+    </appender>
+    <!-- Log Files -->
+    <appender name="FileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logs/isfw.log"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{[dd.MM.yyyy HH:mm:ss,SSS]} %p [%t] (%F:%L) - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="WsLogFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logs/ws.log"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%d{[dd.MM.yyyy] [HH:mm:ss]} %p [%t] %c (%F:%L) - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="LogFile" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/log.out"/>
+        <param name="Threshold" value="OFF"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <appender name="ResultUpdationLog" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/resultUpdation.log"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-6r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="ScenarioLogFile" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/scenario.log"/>
+        <param name="Append" value="false"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss} %m%n"/>
+        </layout>
+    </appender>
+    <appender name="StepBacklog" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/stepbacklog.log"/>
+        <param name="Append" value="false"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <!-- Logger -->
+    <logger name="com.qmetry.qaf">
+        <level value="DEBUG"/>
+        <appender-ref ref="FileAppender"/>
+    </logger>
+    <logger name="com.qmetry.qaf.automation.integration">
+        <level value="DEBUG"/>
+        <appender-ref ref="ResultUpdationLog"/>
+    </logger>
+    <logger name="com.qmetry.qaf.automation.step" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="ScenarioLogFile"/>
+    </logger>
+    <logger name="com.qmetry.qaf.automation.step.StepNotFoundException">
+        <level value="DEBUG"/>
+        <appender-ref ref="StepBacklog"/>
+    </logger>
+    <logger name="com.qmetry.qaf.automation.ui.WebDriverCommandLogger">
+        <level value="INFO"/>
+        <appender-ref ref="FileAppender"/>
+    </logger>
+    <logger name="org.apache.axis.enterprise">
+        <level value="FATAL"/>
+        <appender-ref ref="Console"/>
+        <appender-ref ref="FileAppender"/>
+    </logger>
+    <logger name="org.reflections">
+        <level value="FATAL"/>
+        <appender-ref ref="Console"/>
+        <appender-ref ref="FileAppender"/>
+    </logger>
+    <logger name="ws_rest">
+        <level value="DEBUG"/>
+        <appender-ref ref="FileAppender"/>
+    </logger>
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="ConsoleAppender"/>
+        <appender-ref ref="ReportPortalAppender"/>
+        <appender-ref ref="FileAppender"/>
+    </root>
+</log4j:configuration>

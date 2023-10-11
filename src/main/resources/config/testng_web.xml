@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Canadian Depositors Ins. Co." verbose="0" parallel="none" thread-count="10">
+    <listeners>
+        <listener class-name="com.quantum.java.pages.ScotiaQuantumReportListener"/>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="CDIC-Phase-I" enabled="true">
+        <groups>
+            <run>
+
+<!--                <include name="@us100dq"/>-->
+<!--                <include name="@VALADD-1031"/>-->
+<!--                <include name="@COEBRR-16766"/>-->
+                <include name="@Verify1ECustomerAccountsInExtract" />
+<!--                <include name="@Verify1ECustomerAccountsWithPDF"/>-->
+                <!--                <include name="@Verify3FPNTACustomerAccountsWithExtract"/>-->
+                <!--<include name="@Verify3ECustomerAccountsInExtract"/>-->
+                <!--<include name="@Verify2FCustomerAccountsWithExtract"/>-->
+                <!--<include name="@hummingBirdScenario"/>-->
+                <!--<include name="@Verify3FPNTACustomerAccountsWithExtract"/>-->
+                <!--<include name="@Verify2EPNTACustomerAccountsWithExtract"/>-->
+
+                <!--PDF Execution-->
+                <!--<include name="@Verify1ECustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify2ECustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify3ECustomerAccountsWithPDF"/>-->
+
+                <!--<include name="@Verify1FCustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify2FCustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify3FCustomerAccountsWithPDF"/>-->
+
+                <!--<include name="@Verify2FPNTACustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify3FPNTACustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify2EPNTACustomerAccountsWithPDF"/>-->
+                <!--<include name="@Verify3EPNTACustomerAccountsWithPDF"/>-->
+
+
+            </run>
+        </groups>
+        <classes>
+            <class
+                    name="com.quantum.utility.ScotiaGherkinScenarioFactory"/>
+        </classes>
+    </test>
+
+</suite>
+

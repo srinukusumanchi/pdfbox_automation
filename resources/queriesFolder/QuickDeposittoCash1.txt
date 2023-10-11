@@ -1,0 +1,16 @@
+select pa.dealeraccountno, cp.code,res.code,pd.code 
+from planaccount pa , residency res , account ac , company cp , involvedparty iv , client cl, product pd 
+where ROWNUM <= 5 and pa.accountid is not null 
+and pa.accountid=ac.accountid and ac.status=0 
+and pa.dealer=cp.companyid and cp.code='##########' 
+and pa.accountid=iv.planaccount and iv.status=0 and iv.primaryowner=1 
+and iv.client=cl.clientid 
+and cl.clienttype = '1' 
+and iv.ownershippercentage = '##########' 
+and pa.residency=res.staticdataid(+) 
+and (length(res.code)=3 ) and pa.planproduct=pd.productid 
+and (res.code='##########') 
+and (pd.code = '##########' ) 
+and pa.accountid=ac.accountid 
+and ac.opendate > date '2010-01-01' 
+and ac.opendate < date '2019-01-01'

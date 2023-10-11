@@ -1,0 +1,11 @@
+.idea
+target
+/test-results
+*.out
+*.iml
+/target
+*.zip
+*.json
+*.log
+*.MF
+*.png

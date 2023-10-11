@@ -1,0 +1,450 @@
+
+#Login Page
+ScotiaID=idToken1
+Password=idToken2
+LogOn=loginButton_0
+Customersalesservice
+#Select Branch
+SelectBranch=Table1
+
+#Intralink Portal
+InformationSupport= xpath=(.//*[@id="tabset_portaltabset"]/table/tbody//span)[3]
+Customersalesservice= xpath=.//a[text()="Customer Sales & Service" or text()="Vente et service à la clientèle"]
+CustomersalesserviceFrench= xpath=.//a[text()="Vente et service à la clientèle"]
+Language= xpath=//*[text()="English" or text()="français"]
+
+
+#Customer Locate / Setup
+CustomerLocateSetup=LocateBy_LocateByType
+CustomerLocatebyCID=LocateByCID_CID
+PCUSTCIDFIND= xpath=.//*[@id="findByCID"]
+PCUSTPRODUCTFIND= xpath=.//*[@id="findByProduct"]
+PCUSTFIRSTNAME=LocateByName_PersonName_FirstName
+PCUSTLASTNAME=LocateByName_PersonName_LastName
+PCUSTFIND=findByPersonalCustomer
+NPCUSTNAME=LocateByName_LegalName
+NPCUSTFIND=findByNonPersonalLegalCustomer
+
+#Customer Products & Services
+
+
+#Customers Found
+Customername= xpath=.//*[@id="customer"]
+#Newcustomerbutton= xpath=.//*[@id="newActionPersonal"]
+Newcustomerbutton=newCustomerAction
+Customernameclick= xpath=//*[@id="customer"]
+
+#Customer sales & services
+custName= xpath=//*[@href="/Customer"]
+InformationTAB= xpath=//img[@src='/Customer/images/en/information.gif']
+InformationTABSearchByName= xpath=//img[@src='/Customer/images/en/information_on.gif']
+InformationTABFrench= xpath=//img[@src='/Customer/images/fr/donnes.gif']
+productsAndServicesTAB= xpath=//img[@src='/Customer/images/en/prod_serv_tab.gif' or @src='/Customer/images/fr/prod_serv_tab.gif']
+CIDValue= xpath=//*[contains(text(),'CID #:')]/following-sibling::td[1]
+CIDValueFrench= xpath=//*[contains(text(),'IDC:')]/following-sibling::td[1]
+Intralink= xpath=//*[@id="ipb_IntralinkHREF"]/img
+signoff= xpath=//a[@href='/PortalWeb/Logout']
+
+
+#========================================================
+#Intralink - Customer Creation - Personal Customer Set Up
+#========================================================
+
+#Name
+#=========================
+Title= xpath=.//*[@id="Customer_Person_PersonName_Title"]
+FirstName= xpath=//*[@id="Customer_Person_PersonName_FirstName"]
+LastName= xpath=.//*[@id="Customer_Person_PersonName_LastName"]
+BirthDate= xpath=.//*[@id="Customer_Person_BirthDate_DateOfBirth"]
+UpdateBirthDate= xpath=.//*[@id="Customer_Person_BirthDate_DateOfBirth"]
+
+#Home address
+#====================================
+standardCanada_US= xpath=.//input[(@type='radio' and @value='Y' and @id='Customer_Person_Residence_IsStandardAddress') or (@type='radio' and @value='Y' and @id='Customer_NonPersonalEntity_IsStandardAddress')]
+nonStandard_Foreign= xpath=.//input[(@type='radio' and @value='N' and @id='Customer_Person_Residence_IsStandardAddress') or (@type='radio' and @value='N' and @id='Customer_NonPersonalEntity_IsStandardAddress')]
+StreetNumber= xpath=//*[@id="Customer_Person_Residence_StandardAddress_StreetNumber"]
+StreetName= xpath=//*[@id="Customer_Person_Residence_StandardAddress_StreetNameType"]
+StreetDirection= xpath=//*[@id="Customer_Person_Residence_StandardAddress_StreetDirection"]
+UnitType= xpath=//*[@id="Customer_Person_Residence_StandardAddress_UnitType"]
+UnitNumber= xpath=//*[@id="Customer_Person_Residence_StandardAddress_UnitNumber"]
+homeAddressCityStandard= xpath=//*[@id="Customer_Person_Residence_Address_City" or@id="Customer_NonPersonalEntity_Address_City" ]
+homeAddressCityNonStandard= xpath=//*[@id="Customer_Person_Residence_Address_Line3" or @id="Customer_NonPersonalEntity_Address_Line3"]
+haProvinceState= xpath=//*[@id="Customer_Person_Residence_Address_Region" or @id="Customer_NonPersonalEntity_Address_Region"]
+haCountry= xpath=//*[@id="Customer_Person_Residence_Address_Country" or @id="Customer_NonPersonalEntity_Address_Country"]
+homeAddressPostalZipCodeStandard_NonStandard= xpath=//*[@id="Customer_Person_Residence_Address_PostalCode" or @id="Customer_NonPersonalEntity_Address_PostalCode"]
+homeAddressState= xpath=.//select[@name='Customer_Person_Residence_Address_Region' or @name='Customer_NonPersonalEntity_Address_Region']
+Jurisdiction= xpath=//*[@id="nrqResponse"]
+HomeTelephone= xpath=//*[@id="Customer_Person_Residence_HomeTelephone"]
+BusinessTelephone= xpath=//*[@id="Customer_Person_Employment_BusinessPhone"]
+Ext= xpath=//*[@id="Customer_Person_Employment_BusinessPhoneExt"]
+Email= xpath=//*[@id="Customer_Person_PersonalEmailAddress"]
+PresentConsent= xpath=//*[@id="presentConsentAction"]
+Askmelater= xpath=//*[@id="BUTTON_BACK_ID"]
+Yesreceiveemsgs= xpath=//*[@id="BUTTON_YES_ID"]
+ABBSCustomerTypeSelection= xpath=//*[@id="Customer_Person_Identifications_CustomerIdStatus"]
+Province= xpath=//*[@id="CustomerId_Province"]
+
+HomeAddressLineOne=//*[contains(text(),'Address Line 1:') or contains(text(),'Adresse ligne 1:') ]/following-sibling::td[1]
+HomeAddressLineTwo=//*[contains(text(),'Address Line 2:') or contains(text(),'Adresse ligne 2:') ]/following-sibling::td[1]
+
+
+#Residence Information --Optional
+#==============================
+
+#Identification
+#==============================
+CustomerPresent= xpath=//*[@id="isCustomerPresent"]
+CustomerIdStatus= xpath=//*[@id="Customer_Person_Identifications_CustomerIdStatus"]
+
+#Add Customer ID
+#======================================
+IDMethod= xpath=//*[@id="Customer_Id_Process_Dropdown"]
+IDMethodFrench= xpath=//*[@id="Customer_Id_Process_Dropdown" and @class='selectElement']
+IDDocumentType= xpath=//*[@id="Customer_IdType"]
+IDDocumentSource= xpath=//*[@id="CustomerId_Source"]
+IDRefAccountNumber= xpath=//*[@id="idNumber"]
+ExpiryDate= xpath=//*[@id="IDExpiryDate"]
+IDDescription= xpath=//*[@id="idDescription"]
+IDCountry= xpath=//*[@id="CustomerId_IssuingCountry"]
+ProvTerrState= xpath=//*[@id="CustomerId_Province"]
+PlaceofBirth= xpath=//*[@id="CustomerId_PlaceOfBirth"]
+Addidentification= xpath=//*[@id="addIdAction"]
+Action= xpath=//*[@id="Customer_Id_Action_Type_0"]
+Update= xpath=//*[@id="updateId"]
+
+#Employment
+#=====================
+BusinessEmployer= xpath=//*[@id="Customer_Person_Employment_EmployerName"]
+AddressLine1= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_Line1"]
+AddressLine2= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_Line2"]
+empCity= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_Line3"]
+empProvinceState= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_Region"]
+empPostalZipCode= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_PostalCode"]
+empCountry= xpath=//*[@id="Customer_Person_Employment_BusinessEmployerAddress_Address_Country"]
+OccupationStatus= xpath=//*[@id="Customer_Person_Employment_OccupationStatus"]
+OccupationType= xpath=//*[@id="Occupation_Type"]
+OccupationCategory= xpath=//*[@id="Occupation_Category"]
+Occupation= xpath=//*[@id="Occupation_Code"]
+OccupationDesc= xpath=//*[@id="Occupation_Description"]
+
+#Personal Income
+#========================
+GrossMonthlyIncome= xpath=//*[@id="Customer_Person_Employment_GrossMonthlyIncome"]
+
+#Personal Information
+#=========================
+ProfileStatus= xpath=//*[@id="Customer_CustomerStatus"]
+TaxResidencyInformation= xpath=//*[@id="Has_IntlTax_NO"]
+#TaxResidencyInformation= xpath=//*[@id="Has_IntlTax_YES"]
+LanguageChoice= xpath=//*[@id="Customer_Person_PersonalLanguage"]
+
+#Multicultural Information
+#=================================
+MulticulturalPrograms= xpath=//input[@type='radio' and @name='multiculturalcheckbox']//following-sibling::span[contains(text(),'No')]//parent::td/input[2]
+MulticulturalProgramsFrench= xpath=//input[@type='radio' and @name='multiculturalcheckbox']//following-sibling::span[contains(text(),'Non')]//parent::td/input[2]
+Done= xpath=//*[@value="Done"]
+FrenchDone= xpath=//*[@value="Terminée"]
+
+#CIS_NP_Customer_update
+#========================================
+Information= xpath=//a/img[@src='/Customer/images/en/information.gif']
+ChangeCustomerName= xpath=//input[@value="Change Customer Name"]
+ChangeCustomerNameFrench= xpath=//*[@value="Modifier nom du client"]
+ChangeDateBusinessEstablished= xpath=//*[@name="Customer_NonPersonalEntity_DateBusinessEstablished"]
+Updatedone= xpath=//*[@id="done"]
+Updateemail= xpath=//*[@id="Customer_NonPersonalEntity_EmailAddress"]
+
+#Customer Name Change page
+#======================================
+updateCustomerNameLine1= xpath=//*[@id="FIELD_NAME_LINE1"]
+updateCustomerNameLine2= xpath=//*[@id="FIELD_NAME_LINE2"]
+updatePersCustFirstName= xpath=//*[@name="FIELD_FIRST_NAME"]
+updatePersCustLastName= xpath=//*[@name="FIELD_LAST_NAME"]
+Continuebutton= xpath=//*[@id="BUTTON_DONE_ID"]
+CS5CupdateButton= xpath=//*[@id="BUTTON_UPDATE_ID"]
+CS5CDone= xpath=//*[@id="Done"]
+Gender= xpath=//*[@id="Customer_Person_Gender"]
+Action= xpath=//*[@id="Customer_Id_Action_Type_0"]
+UpdateRemove= xpath=//*[@id="updateId"]
+
+#Customer Account Title Maintenance page
+#========================================
+TMDone= xpath=//*[@id="Done"]
+
+#Done Button from CustCreation page
+#==================================
+CustInfDone= xpath=//*[@value="Done"]
+CustInfDoneFrench= xpath=//*[@value="Terminée"]
+UpdatedPersCustName= xpath=(//*[@class="titleSubHeader"])[1]
+
+
+#============================================================
+#Intralink - Customer Creation - Non Personal Customer set up
+#============================================================
+#Customer
+#====================
+CustomerNameLine1= xpath=//*[@name="Customer_NonPersonalEntity_LegalName"]
+CustomerNameLine2= xpath=//*[@name="Customer_NonPersonalEntity_TradeName"]
+
+
+#Business Address
+#====================
+NPStreetNumber= xpath=//*[@id="Customer_NonPersonalEntity_StandardAddress_StreetNumber"]
+NPStreetName= xpath=//*[@id="Customer_NonPersonalEntity_StandardAddress_StreetNameType"]
+NPStreetDirection= xpath=//*[@id="Customer_NonPersonalEntity_StandardAddress_StreetDirection"]
+NPUnitType= xpath=//*[@id="Customer_NonPersonalEntity_StandardAddress_UnitType"]
+NPUnitNumber= xpath=//*[@id="Customer_NonPersonalEntity_StandardAddress_UnitNumber"]
+NPReturnedMaildetails= xpath=//*[@name="Customer_NonPersonalEntity_StandardAddress_SundryAddressInfo"]
+NPDualaddressdelivery= xpath=//*[@name="Customer_NonPersonalEntity_StandardAddress_AdditionalDeliveryInformation"]
+NPType= xpath=//*[@name="Customer_NonPersonalEntity_StandardAddress_DeliveryType1"]
+NPNo= xpath=//*[@name="Customer_NonPersonalEntity_StandardAddress_DeliveryNumber1"]
+NPACity= xpath=//*[@name="Customer_NonPersonalEntity_Address_City"]
+NPAProvinceState= xpath=//*[@name="Customer_NonPersonalEntity_Address_Region"]
+NPAPostalZipCode= xpath=//*[@name="Customer_NonPersonalEntity_Address_PostalCode"]
+NPACountry= xpath=//*[@id="Customer_NonPersonalEntity_Address_Country"]
+NPEmail= xpath=//*[@id="Customer_NonPersonalEntity_EmailAddress"]
+NPPresentConsent= xpath=//*[@id="presentConsentAction"]
+NPAskmelater= xpath=//*[@id="BUTTON_BACK_ID"]
+NPYesreceiveemsgs= xpath=//*[@id="BUTTON_YES_ID"]
+ConsentError= xpath=//*[contains(text(),'CS2238 - Consent language needs to be presented to the customer.')]
+
+#Contact Information
+#==============================
+ContactName= xpath=//*[@name="Customer_NonPersonalEntity_Contact_ContactName"]
+ContactTitle= xpath=//*[@name="Customer_NonPersonalEntity_Contact_ContactTitle"]
+ContactPhoneNumber= xpath=//*[@name="Customer_NonPersonalEntity_Contact_ContactPhone"]
+
+#Business Information
+#=====================================
+BusinessLegalName= xpath=//*[@name="Customer_NonPersonalEntity_BusinessLegalName"]
+BusinessTradingName= xpath=//*[@name="Customer_NonPersonalEntity_BusinessTradingName"]
+CustomerType= xpath=//*[@name="Customer_NonPersonalEntity_TypeOfBusiness"]
+DateBusinessEstablished= xpath=//*[@name="Customer_NonPersonalEntity_DateBusinessEstablished"]
+StandardIndustrialCode= xpath=//*[@name="Customer_NonPersonalEntity_StandardIndustrialCode"]
+AnnualSalesfromFinStmt= xpath=//*[@id="Customer_NonPersonalEntity_AnnualSales"]
+NumberofEmployees= xpath=//*[@name="Customer_NonPersonalEntity_NumberOfEmployees"]
+NPStatus= xpath=//*[@name="Customer_CustomerStatus"]
+NPTax= xpath=//input[@id='Has_IntlTax_NO']
+IncorporatedCompanyYes= xpath=//td[contains(text(),'Incorporated Company *')]/parent::tr//following-sibling::tr//input[@value='Y']
+IncorporationNumber= xpath=//*[@id="Customer_NonPersonalEntity_CorporationRegistrationNo"]
+#Place of Issue of Corporation
+BProvinceState= xpath=//*[@id="Customer_NonPersonalEntity_CorporationProvinceOfIssue"]
+BCountry= xpath=//*[@id="Customer_NonPersonalEntity_CorporationCountryOfIssue"]
+
+#Customer Relationship
+#=================================
+Locate= xpath=//*[@name="locate"]
+Action= xpath=//*[@name="Customer_CustomerRelationships_CustomerRelationship_RelationshipAction"]
+Relationship= xpath=//*[@name="Customer_CustomerRelationships_CustomerRelationship_0_RelationshipType"]
+Ownership= xpath=//*[@name="Customer_CustomerRelationships_CustomerRelationship_0_RelationshipPercentageOwned"]
+NPDone= xpath=//*[@name="done"]
+
+
+#Savings Account Setup
+#====================================
+CustomerVerified= xpath=//*[@id="isCustomerAuthenticated"]
+CustomerVerifiedDone= xpath=//*[@value="Done"]
+CustomerVerifiedDoneFrench= xpath=//*[@value="Terminée"]
+CheckSelectCustomer= xpath=//*[@id="Customer_0_CID"]
+Setup= xpath=/html/body/div[2]/div[1]
+DayToDayBanking= xpath=/html/body/div[3]/div[3]
+DayToDayBankAccount= xpath=/html/body/div[6]
+#ConductBusiness= xpath=//*[@value="N"]
+ConductBusiness= xpath=//input[@name="AccountUsedForOther" and @value="N"]
+AccountType= xpath=//*[@id="AccountType"]
+RelationshipType= xpath=/html/body/table/tbody/tr[4]/td/table/tbody/tr/td/form/table[2]/tbody/tr[2]/td[2]
+DayToDayHighwayContinue= xpath=//*[@name="Continue"]
+#CreditBureau= xpath=(//input[@name="Customer_0_CB"])[2]
+#SINCreditBureau= xpath=(//input[@name="Customer_0_SIN"])[2]
+CreditBureau= xpath=//input[@name="Customer_0_CB" and @value="NO"]
+SINCreditBureau= xpath=//input[@name="Customer_0_SIN" and @value="NO"]
+CreditBureauContinue= xpath=//*[@value="Continue"]
+ContinueFrench= xpath=//*[@value="Continuer"]
+AccountOptionsDone= xpath=//*[@name="Done"]
+ReasonForAccountOpen= xpath=//*[@id="ReasonForAccountOpen"]
+SourceOfFunds= xpath=//*[@id="SourceOfFunds"]
+AccountOptionsDone_FR= xpath=//*[@value="Terminé"]
+PrintTermsAndConditions= xpath=//*[@value="Print Terms and Conditions"]
+PrintTermsAndConditions_Fr= xpath=//*[@value="Imprimer conditions"]
+PrintClose= xpath=//*[@id="PAGE1.OEI_Toolbar1-1_24.labelWidget_298130225A17189ADFB46FC0B88A79F1000"]
+AccountPrint= xpath=//*[@value="Print"]
+AccountPrint_FR= xpath=//*[@value="Imprimer"]
+Return= xpath=.//a[text()="Return"][1]
+Return_Fr= xpath=.//a[text()="Retour"][1]
+AccountNumber= xpath=//*[contains(text(),'Account Number:')]//following-sibling::td[1]
+AccountNumberFrench= xpath=//*[contains(text(),'Numéro du compte:')]//following-sibling::td[1]
+IntralinkImage= xpath=//*[@id="ipb_IntralinkHREF"]/img
+SignOffButton= xpath=//*[contains(text(),'Sign-off') or contains(text(),'Sortie')]
+SignOffButtonFrench= xpath=//*[contains(text(),'Sortie')]
+UpdateAndConfirmFrench= xpath=//*[@id="Customer_Id_Action_Type_0"]
+FrenchUpdateButton= xpath=//*[@value="Mettre à jour"]
+
+#===========================================
+#AccessByAccountInformation
+#=============================
+AccessByAccountLink= xpath=//*[contains(text(),'Access by Account')]
+AYProductType= xpath=//*[@id='Product']
+AYAccountNumber= xpath=//*[@id='AccountNumber']
+AYContinue= xpath=//*[@id='Continue']
+AYVerifyBBAccount= xpath=//*[contains(text(),'Account Number:')]//following-sibling::td[1]
+AYReturn= xpath=//*[@name='Return']
+
+#===========================================
+#Personal Customer Name Change page
+#======================================
+updateCustomerNameLine1= xpath=//*[@id="FIELD_NAME_LINE1"]
+updateCustomerNameLine2= xpath=//*[@id="FIELD_NAME_LINE2"]
+updatePersCustFirstName= xpath=//*[@name="FIELD_FIRST_NAME"]
+updatePersCustLastName= xpath=//*[@name="FIELD_LAST_NAME"]
+Continuebutton= xpath=//*[@id="BUTTON_DONE_ID"]
+Gender= xpath=//*[@id="Customer_Person_Gender"]
+Action= xpath=//*[@id="Customer_Id_Action_Type_0"]
+UpdateRemove= xpath=//*[@id="updateId"]
+
+#========================================
+#Personal Customer Account Title Maintenance page
+#========================================
+TMDone= xpath=//*[@id="Done"]
+
+
+#==================================
+#Done Button from CustCreation page
+#==================================
+CustInfDone= xpath=//*[@value="Done"]
+
+UpdatedPersCustName= xpath=(//*[@class="titleSubHeader"])[1]
+
+
+#==================================
+#Pesronal Customer Age less than 12
+#==================================
+Parent= xpath=//*[@value="P"]
+LocateParentLink= xpath=//*[@id="locate"]
+SigningAuthorityNo= xpath=.//input[@name='Customer_Person_Identifications_MinorSigningAuthority' and @value='N']
+CS2FirstName= xpath=//*[@id="LocateByName_PersonName_FirstName"]
+CS2LastName= xpath=//*[@id="LocateByName_PersonName_LastName"]
+CS2Find= xpath=//*[@id="findByPersonalCustomer"]
+CS28Done= xpath=//*[@type="submit"]
+CS5CustomerVerified= xpath=//*[@id="isCustomerAuthenticated"]
+CustomerVerifiedDone= xpath=.//input[@name='action' and @value='Done']
+
+
+#--------------------------
+#DDA Account setup
+#--------------------------
+CustomerSelect= xpath=//*[@id="Customer_0_CID"]
+NPSetUp= xpath=html/body/div[2]/div[1]
+Business= xpath=html/body/div[3]/div[2]
+BusinessAccountWithoutCreditBureau= xpath=html/body/div[5]/div[2]
+
+#Business Account Open - Ownership - page
+DDAAccountType= xpath=//select[@id="ownAccountType"]
+BusinessownedbyanotherCompany= xpath=//*[@value="BUSINESS_OWNED_BY_ANOTHER_COMPANY_NO"]
+AddaSigningOfficer= xpath=/html/body/form/table[10]/tbody/tr/td[2]/a
+Director= xpath=//*[@name="ownDirector0"]
+BusinessTitle= xpath=//*[@id="ownTitle0"]
+INext= xpath=//input[@name="Next"]
+
+#============================
+#Involved Party Setup - Name
+#=========================
+ITit= xpath=.//*[@id="Customer_Person_PersonName_Title"]
+IFirstName= xpath=//*[@id="Customer_Person_PersonName_FirstName"]
+ILastName= xpath=.//*[@id="Customer_Person_PersonName_LastName"]
+IBirthDate= xpath=.//*[@id="Customer_Person_BirthDate_DateOfBirth"]
+
+#Involved Party Setup - Home address
+#====================================
+IStreetNumber= xpath=//*[@id="Customer_Person_Residence_StandardAddress_StreetNumber"]
+IStreetName= xpath=//*[@id="Customer_Person_Residence_StandardAddress_StreetNameType"]
+IStreetDirection= xpath=//*[@id="StandardAddress_StreetDirection"]
+IUnitType= xpath=//*[@id="StandardAddress_UnitType"]
+IUnitNumber= xpath=//*[@id="Customer_Person_Residence_StandardAddress_UnitNumber"]
+ICity= xpath=//*[@id="Customer_Person_Residence_Address_City"]
+IProvinceState= xpath=//*[@id="Address_Region"]
+ICountry= xpath=//*[@id="Customer_Person_Residence_Address_Country"]
+IPostalZipCode= xpath=//*[@id="Customer_Person_Residence_Address_PostalCode"]
+IHomeTelephone= xpath=//*[@id="Customer_Person_Residence_HomeTelephone"]
+IEmail= xpath=//*[@id="Customer_Person_PersonalEmailAddress"]
+InvolvedPartyPresent= xpath=//*[@id="isCustomerPresent"]
+
+
+
+#Add Customer ID
+#======================================
+IIDMethod= xpath=//*[@id="Customer_Id_Process_Dropdown"]
+IIDDocumentType= xpath=//*[@id="Customer_IdType"]
+IIDDocumentSource= xpath=//*[@id="CustomerId_Source"]
+IIDRefAccountNumber= xpath=//*[@id="idNumber"]
+IExpiryDate= xpath=//*[@id="IDExpiryDate"]
+IIDCountry= xpath=//*[@id="CustomerId_IssuingCountry"]
+IProvTerrState= xpath=//*[@id="CustomerId_Province"]
+IPlaceofBirth= xpath=//*[@id="CustomerId_PlaceOfBirth"]
+IAddidentification= xpath=//*[@id="addIdAction"]
+
+#Employment
+IOccupationStatus= xpath=//*[@id="Customer_Person_Employment_OccupationStatus"]
+IOccupationType= xpath=//*[@id="Occupation_Type"]
+IOccupationCategory= xpath=//*[@id="Occupation_Category"]
+IOccupation= xpath=//*[@id="Occupation_Code"]
+IDescription= xpath=//*[@id="Occupation_Description"]
+ILanguageChoice= xpath=//*[@id="Customer_Person_PersonalLanguage"]
+IDone= xpath=//*[@value="Done"]
+
+#=======================================
+#Business Account Open - Options I
+#=======================================
+IntendeduseofAccount= xpath=//*[@id="intendedUseOfAccount"]
+Willthisaccountbeusedbehalfofsomeone= xpath=//*[@value="OPT_THIRDPARTY_NO"]
+BasicBusinessAccount= xpath=//*[@value="typeBasicBusiness"]
+StandaloneElectronicBanking= xpath=//*[@value="0"]
+IAccountopenNext= xpath=//input[@name="Next"]
+
+#======================================
+#Business Account Open - Options II
+#=======================================
+BusinessAccountNumber= xpath=//input[@name="ovdAccountNumber"]
+ShortName= xpath=//*[@name="ovdShortName"]
+Next= xpath=//*[@name="Next"]
+AccountError= xpath=//*[contains(text(),'ACCT ALREADY PRES. ON AIF/MST')]
+FinalDone= xpath=//input[@name="Done"]
+SummaryDone= xpath=//input[@name="Done"]
+
+
+#==============================InformationTAB
+#Account Profile page
+#===============================
+PrdAccountTitleOne= xpath=//*[contains(text(),'Account Title 1') or contains(text(),'Compte - Titre 1') or contains(text(),'Titre compte 1:')]/following-sibling::*
+PrdAccountTitleTwo= xpath=//*[contains(text(),'Account Title 2') or contains(text(),'Compte - Titre 2') or contains(text(),'Titre compte 2:')]/following-sibling::*
+PrdAddressLineOne= xpath=//*[text()='Address Line 1:' or text()='Adresse ligne 1:' or text()='Adresse - Ligne 1:']/following-sibling::*
+PrdAddressLineTwo= xpath=//*[text()='Address Line 2:' or text()='Adresse ligne 2:' or text()='Adresse - Ligne 2:']/following-sibling::*
+PrdCityAddressLineThree= xpath=//*[contains(text(),'City/Address Line 3') or contains(text(),'Ville/Adresse ligne 3') or contains(text(),'Ville/Adresse - Ligne 3') ]/following-sibling::*
+PrdProvince_State= xpath=//*[contains(text(),'Province/State') or contains(text(),'Province/État')]/following-sibling::*
+PrdPostal_ZipCode= xpath=//*[contains(text(),'Postal/Zip Code') or contains(text(),'Code postal/Zip')]/following-sibling::*
+PrdCountry= xpath=//*[contains(text(),'Country') or contains(text(),'Pays')]/following-sibling::*
+
+PrdNPAddressLineOne= xpath=(//*[contains(text(),'Address Line 1') or contains(text(),'Adresse ligne 1')]/following-sibling::td[2])[2]
+PrdNPAddressLineTwo= xpath=(//*[contains(text(),'Address Line 2') or contains(text(),'Adresse ligne 2')]/following-sibling::td[2])[2]
+PrdNPCityAddressLineThree= xpath=(//*[contains(text(),'City/Address Line 3' or contains(text(),'Ville/Adresse ligne 3'))]/following-sibling::td[2])[2]
+PrdNPProvince_State= xpath=(//*[contains(text(),'Province/State') or contains(text(),'Province/État']/following-sibling::td[2])[2]
+PrdNPPostal_ZipCode= xpath=(//*[contains(text(),'Postal/Zip Code') or contains(text(),'Code postal/Zip')]/following-sibling::td[2])[2]
+PrdNPCountry= xpath=(//*[contains(text(),'Country') or contains(text(),'Pays')]/following-sibling::td[2])[2]
+
+#==============================
+# Account Overview
+#===============================
+AO_Address= xpath=//*[@id="tabset_planinquiry"]//td[11]/span/span
+cashAndCashEquivalentsTable=((.//*[text()='Cash and Cash Equivalents']/following::table)[1]//tbody)[1]
+fixedIncomeTable=((.//*[text()='Fixed Income']/following::table)[1]//tbody)[1]
+canadianEquityTable=((.//*[text()='Canadian Equity']/following::table)[1]//tbody)[1]
+foreignEquityTable=((.//*[text()='Foreign Equity']/following::table)[1]//tbody)[1]
+
+#==============================
+# GIC Details
+#===============================
+#certificateNumber= xpath=.//td[text()='Certificate Number:' or text()='Numéro de certificat:']/following-sibling::td[3]
+certificateNumber= xpath=/html/body/table/tbody/tr/td/form/table[3]/tbody/tr/td/span/table/tbody/tr/td/table/tbody/tr/td[5]
+cancelButton= xpath=.//input[@id='ipCancel']
+doneButton= xpath=.//input[@name='DoneButton']
+#issuer= xpath=.//*[text()='Certificate Number:' or text()='Numéro de certificat:']/preceding::td/b
+issuer= xpath=/html/body/table/tbody/tr/td/form/table[2]/tbody/tr/td/b

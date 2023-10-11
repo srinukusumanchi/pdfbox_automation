@@ -1,0 +1,28 @@
+# Properties for CiaD Jenkins build pipelines 
+
+#Specify Email Id's separated by comma to notify build success or failure
+emailList: Amaranath.Ramayanam@scotiabank.com,JayaramaNaidu.Inukurthi@scotiabank.com,SRINU.KUSUMANCHI@scotiabank.com
+
+#Specify the artifact id from your pom.xml
+artifactId: cd_cdic_phase1
+
+#Specify the Artifactory repository
+artifactoryReleaseRepo: local-custom-maven
+
+#Enable it if you don't need Fortify scan
+skipFortifyScan: true
+
+#Enable it if you don't need Sonar scan
+skipSonarScan: false
+
+#Specify your artifact file name, enable it if the file name is not the "artifactId" attribute in pom file
+#artifactId: abc
+
+#Your artifact file extension, enable it if your artifact extension not "packaging" attribute in pom file
+packageType: jar
+
+#Enable it if you do not have unit tests to check your code coverage
+skipUnitTests: true
+
+#Enable it if you are not ready to deploy your application
+skipDeployment: true
